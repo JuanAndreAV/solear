@@ -7,29 +7,54 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body{background-color:rgb(229, 252, 244)}
+    body {background-color:rgb(242, 250, 247);font-family: 'Times New Roman', Times, serif;}
     .header-image {
-      max-width: 90%; /* Limita el ancho al 80% del contenedor */
-      height: auto; /* Mantiene la proporción */
-      display: block; /* Para centrar la imagen */
-      margin: 20px auto; /* Centra horizontalmente */
+      
+      max-width: 70%; 
+      height: auto; 
+      display: block; 
+      margin: 20px auto; 
       border-radius: 20px;
   }
   h1, h4 { 
     padding: 10%;
     color: #0b4614;
+    font-weight: bold;
     }
   .amarillo{
-    background-color: rgb(233, 177, 36);
-    width: 100%;
-    height: 100%;
+    background-color: #fddb3a; 
+    width: 100%; 
+    padding: 60px 40px;
+   
   }
+  .amarillo h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333; 
+}
+.amarillo h6{
+  font-size: 1.5rem;
+  text-align: start;
+  font-weight: bold;
+  color: #0b4614;
+}
+h5{
+  color: #228331;
+  font-size:medium;
+}
+.tarjetas{
+  background-color: rgb(242, 250, 247);
+  color: #228331;
+  font-weight: bold;
+}
+
+
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">Solear</a>
+        <a class="navbar-brand" href="#solear">Solear</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,20 +62,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Inicio</a>
+                    <a class="nav-link" href="#calculadora">Calculadora</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Calculadora</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="#contacto">Contacto</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<header class=>
+<header class="mb-1">
   <div>
     <img src="./assets/paneles1.jpg" alt="Paneles Header" class="header-image">
   </div>
@@ -66,33 +88,47 @@
     </div>
   </div>
 </header>
-<main class="container ">
-  <div class="amarillo">
-    <h6 class="text-start">Nuestro Propósito</h6>
-    <h2>Nuestro objetivo es educar y empoderar a las comunidades sobre lassoluciones de energía limpia y sus beneficios</h2>
-  </div>
+<section id="solear" class="amarillo mb-1">
+  <h6>Nuestro Propósito</h6>
+  <h2>Nuestro objetivo es educar y empoderar a las comunidades sobre las soluciones de energía limpia y sus beneficios.</h2>
+</section>
+<main class="container">
   <div class="row">
+    <div class="col ">
+      <h1 class="text-center">Desbloquee el conocimiento<br> sobre energía renovable</h1>
+      <h5>Su puerta de entrada para comprender la energía limpia.</h5>
+    </div>
+  </div>
+  <div  class="row"><!--tarjetas-->
       <div class="col-md-6">
-          <div class="p-4 border">
-              <h2>Div 1</h2>
-              <p>Contenido para el primer div.</p>
-          </div>
+        <div class="card border-warning mb-3 tarjetas" style="max-width: 40rem;">
+            <img src="./assets/paneltarjeta1.jpg" class="card-img-top" alt="Panel solar">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-text">Potencie sus opciones energéticas</h5>
+                <p class="card-title">Calcule su impacto renovable</p>
+                <h5 class="card-text">Descubra cuánta energía renovable puede utilizar en su hogar o comunidad.</h5>
+                <p><a href="#" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Calcular ahora</a></p>
+              </div>
+            </div>
+        </div>
       </div>
       <div class="col-md-6">
-          <div class="p-4 border">
-              <h2>Div 2</h2>
-              <p>Contenido para el segundo div.</p>
+        <div class="card border-warning mb-3 tarjetas" style="max-width: 40rem;">
+          <img src="./assets/paneltarjeta2.jpg" class="card-img-top" alt="Panel solar">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-text">Únase al movimiento de energía limpia</h5>
+              <p class="card-title">Seguimiento de las tendencias energéticas mundiales</p>
+              <h5 class="card-text">Acceda a datos completos sobre el uso de energía renovable en todo el mundo.</h5>
+            </div>
           </div>
+      </div>
       </div>
   </div>
-</main>
-
-
-
-
-
+  <!--Dashboard-->
   <div class="container mt-4">
-    <h1 class="text-center">Dashboard Energías Renovables</h1>
+    <h1 class="text-center">Energías Renovables</h1>
     <div class="container-fluid text-center">
         <div class="row">
             <div class="col-md-4">
@@ -110,7 +146,7 @@
             </div>
             <div class="col-md-4">
                 <h4>Cálculo capacidad instalada</h4>
-                <form class="form-floating ">
+                <form id="calculadora" class="form-floating ">
                     <input type="number" class="form-control" id="consumoElectrico"  value="test@example.com">
                     <label for="consumoElectrico">Consumo eléctrico total (kwh)</label>
                     <br>
@@ -143,6 +179,37 @@
     </div>
     
   </div>
+</main>
+<section id="solear" class="amarillo mb-1 text-center">
+  <h2>Únase a la revolución renovable</h2>
+  <h6 class="text-center">Juntos podemos marcar la diferencia en nuestro futuro energético.</h6>
+  <button class="btn btn-success btn-lg">Únase</button>
+</section>
+<footer id="contacto" class="text-center py-4">
+  <div class="container">
+      <ul class="list-inline">
+          <li class="list-inline-item">
+              <a href="#" class="text-decoration-none text-secondary">Sobre Nosotros</a>
+          </li>
+          <li class="list-inline-item">
+              <a href="#" class="text-decoration-none text-secondary">Nuestro Proyecto</a>
+          </li>
+          <li class="list-inline-item">
+              <a href="#" class="text-decoration-none text-secondary">LinkeIn</a>
+          </li>
+          <li class="list-inline-item">
+              <a href="#" class="text-decoration-none text-secondary">Contáctanos</a>
+          </li>
+      </ul>
+      <hr>
+      <p class="mb-1">&copy; 2024 Solear. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+
+
+ 
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="index.js"></script>
