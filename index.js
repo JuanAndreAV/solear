@@ -4,7 +4,7 @@ const barChartData = {
     labels: ['Eólica','Hidroeléctrica', 'Solar','Geotérmica'],
     datasets: [{
       label: 'Producción (GWh)',
-      data: datos,
+      data: [0,0,0,0],
       backgroundColor: ['#4caf50', '#ffeb3b', '#2196f3', '#9c27b0'],
     }]
   };
@@ -16,6 +16,8 @@ const barChartData = {
       backgroundColor: ['#4caf50', '#ffeb3b', '#2196f3','#9c27b0'],
     }]
   };
+  
+
   
   const lineChartData = {
     labels: ['2018', '2019', '2020', '2021', '2022'],
@@ -33,14 +35,15 @@ const barChartData = {
       label: 'Capacidad Hidroeléctrica',
       data: [300, 310, 320, 330, 350],
       borderColor: '#2196f3',
+    
       fill: false,
     }]
   };
   
   // Inicializar gráficos
   function renderCharts() {
-    const barCtx = document.getElementById('barChart').getContext('2d');
-    new Chart(barCtx, {
+    const barras = document.getElementById('barChart').getContext('2d');
+    new Chart(barras, {
       type: 'bar',
       data: barChartData,
       options: {
@@ -50,15 +53,15 @@ const barChartData = {
         },
       },
     });
-  
-    const pieCtx = document.getElementById('pieChart').getContext('2d');
-    new Chart(pieCtx, {
-      type: 'pie',
-      data: pieChartData,
-      options: {
-        responsive: true,
-      },
-    });
+    
+    // const torta = document.getElementById('pieChart').getContext('2d');
+    // new Chart(torta, {
+    //   type: 'pie',
+    //   data: pieChartData,
+    //   options: {
+    //     responsive: true,
+    //   },
+    // });
   
     const lineCtx = document.getElementById('lineChart').getContext('2d');
     new Chart(lineCtx, {
@@ -84,29 +87,48 @@ const barChartData = {
   };
   
   
+  let chartInstance;
   boton.addEventListener('click',()=>{
+    
     const formulario = parseFloat(document.getElementById('consumoElectrico').value);
+   
     let capacidadInstalada = 0;
-    datos.splice(0, datos.length)
+    
       for (let fuente in capacidadesRenovables) {
         capacidadInstalada += capacidadesRenovables[fuente]
         datos.push((capacidadInstalada / formulario) * 100)
        
       }
-     
+      
+      
       datos.forEach((item
 
       )=>{
-        contenedor.innerHTML += `<li>${item}</li>`
+        contenedor.innerHTML += `
+      <td>${item.toFixed(2)}%</td>`
         
       }) 
       
-      renderCharts()
-      
+    
+    
+    if (chartInstance) {
+      chartInstance.data = pieChartData;
+      chartInstance.update(); // Actualizar el gráfico existente
+    } else {
+      const torta = document.getElementById('pieChart').getContext('2d');
+      chartInstance = new Chart(torta, {
+        type: 'pie',
+        data: pieChartData,
+        options: {
+          responsive: true,
+        },
+      });
+    }
+    datos.length = 0;
+    
   })
  
- // barChartData.data.datasets[0].data = datos;
-  //barChartData.update()
+ 
   // Renderizar gráficos al cargar la página
- // document.addEventListener('DOMContentLoaded', renderCharts);
+ document.addEventListener('DOMContentLoaded', renderCharts);
   
