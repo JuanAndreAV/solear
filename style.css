@@ -1,0 +1,46 @@
+body {background-color:rgb(242, 250, 247);font-family: 'Times New Roman', Times, serif;}
+    .header-image {
+      
+      max-width: 70%; 
+      height: auto; 
+      display: block; 
+      margin: 20px auto; 
+      border-radius: 20px;
+  }
+  h1, h4 { 
+    padding: 10%;
+    color: #0b4614;
+    font-weight: bold;
+    }
+  .amarillo{
+    background-color: #fddb3a; 
+    width: 100%; 
+    padding: 60px 40px;
+   
+  }
+  .amarillo h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333; 
+}
+.amarillo h6{
+  font-size: 1.5rem;
+  text-align: start;
+  font-weight: bold;
+  color: #0b4614;
+  padding: 20px;
+}
+h5{
+  color: #228331;
+  font-size:medium;
+}
+.tarjetas{
+  background-color: rgb(242, 250, 247);
+  color: #228331;
+  font-weight: bold;
+}
+.img-cuadro {
+  width: 150px; /* Ajusta el tamaño deseado */
+  height: auto; /* Hace la imagen cuadrada */
+  object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+}

@@ -13,8 +13,8 @@ const barChartData = {
     labels: ['Eólica','Hidroeléctrica', 'Solar','Geotérmica'],
     datasets: [{
       data: datos,
-      backgroundColor: ['#4caf50', '#ffeb3b', '#2196f3','#9c27b0'],
-    }]
+      backgroundColor: ['#9c27b0', '#2196f3', '#ffeb3b','#4caf50'],
+    }] 
   };
   
 
@@ -89,22 +89,23 @@ const barChartData = {
   
   let chartInstance;
   boton.addEventListener('click',()=>{
-    
-    const formulario = parseFloat(document.getElementById('consumoElectrico').value);
+    contenedor.innerText =""
+    let formulario = parseFloat(document.getElementById('consumoElectrico').value);
    
     let capacidadInstalada = 0;
+    let tipoRenovable = []
     
       for (let fuente in capacidadesRenovables) {
         capacidadInstalada += capacidadesRenovables[fuente]
         datos.push((capacidadInstalada / formulario) * 100)
+        tipoRenovable.push(fuente)
        
       }
       
       
-      datos.forEach((item
-
-      )=>{
+      datos.forEach((item,index)=>{
         contenedor.innerHTML += `
+      <td>${tipoRenovable[index]}</td>
       <td>${item.toFixed(2)}%</td>`
         
       }) 
@@ -125,6 +126,7 @@ const barChartData = {
       });
     }
     datos.length = 0;
+    tipoRenovable.length =0
     
   })
  
