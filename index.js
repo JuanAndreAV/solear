@@ -78,37 +78,42 @@ const barChartData = {
 
  
   const boton = document.getElementById('btn-calcular');
-  const contenedor = document.getElementById('container');
-  const capacidadesRenovables = {
-    'Eólica': 10,
-    'Hidroeléctrica': 20,
-    'Solar': 5,
-    'Geotérmica': 15
+  const tabla = document.getElementById('datosFilas');
+  const cantidadDias = {
+    '30 días': 30,
+    '15 días': 15,
+    '1 dia': 1,
+    
   };
   
+  function capacidadSolar(consumoMensual, horasSol){
+    let capacidad =  consumoMensual / ( horasSol * 30 * 0.8);
+    //let cantidadPaneles = capacidad / 0.35
+
+    return capacidad
+  };
+
+  console.log("resultado:",capacidadSolar(219,5))
   
   let chartInstance;
+
   boton.addEventListener('click',()=>{
-    contenedor.innerText =""
-    let formulario = parseFloat(document.getElementById('consumoElectrico').value);
-   
-    let capacidadInstalada = 0;
-    let tipoRenovable = []
+    tabla.innerText =""
+    let consumo = parseFloat(document.getElementById('consumoElectrico').value);
+    let horas = parseInt(document.getElementById("horas").value);
+    console.log(horas)
+    let capacidadInstalada = capacidadSolar(consumo, horas);
+    let cantidadPaneles = capacidadInstalada / 0.35;
     
-      for (let fuente in capacidadesRenovables) {
-        capacidadInstalada += capacidadesRenovables[fuente]
-        datos.push((capacidadInstalada / formulario) * 100)
-        tipoRenovable.push(fuente)
-       
-      }
+      tabla.innerHTML = `<td>${consumo} kmh</td><td>${horas} horas</td><td>${capacidadInstalada.toFixed(2)} kw</td><td>${cantidadPaneles.toFixed(0)} paneles</td>`
       
       
-      datos.forEach((item,index)=>{
-        contenedor.innerHTML += `
-      <td>${tipoRenovable[index]}</td>
-      <td>${item.toFixed(2)}%</td>`
+      // datos.forEach((item,index)=>{
+      //   tabla.innerHTML += `
+      // <td>${tipoRenovable[index]}</td>
+      // <td>${item.toFixed(2)}%</td>`
         
-      }) 
+      // }) 
       
     
     

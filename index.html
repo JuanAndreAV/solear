@@ -92,7 +92,7 @@
   <div class="container mt-4">
     <h1 class="text-center">Energías Renovables</h1>
     <div class="container-fluid text-center">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-4">
                 <h4>Porcentaje por Fuente</h4>
                 <canvas id="barChart"></canvas>
@@ -107,24 +107,40 @@
                 <canvas id="pieChart"></canvas>
             </div>
             <div class="col-md-4">
-                <h4>Cálculo capacidad instalada</h4>
+                <h4>Capacidad instalada Energía solar</h4>
                 <form id="calculadora" class="form-floating ">
                     <input type="number" class="form-control" id="consumoElectrico"  value="test@example.com">
-                    <label for="consumoElectrico">Consumo eléctrico total (kwh)</label>
+                    <label for="consumoElectrico">Consumo eléctrico total mes (kwh)</label>
+                  <br>
+                  <select id="horas" class="form-select" aria-label="Horas">
+                      <option  value=1>Cantidad de horas de sol al día</option>
+                      <option value=1>1</option>
+                      <option value=2>2</option>
+                      <option value=3>3</option>
+                      <option value=4>4</option>
+                      <option value=5>5</option>
+                      <option value=6>6</option>
+                      <option value=7>7</option>
+                      <option value=8>8</option>
+                      <option value=9>9</option>
+                      <option value="10">10</option>
+                    </select>
                     <br>
                     <button id="btn-calcular" type="button" class="btn btn-info">Calcular</button>
                   </form>
             </div>
             <div class="col-md-4">
-              <h4>Porcentajes fuentes de energía</h4>
+              <h4>Capacidad Instalada</h4>
                 <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th>Fuente</th>
-                        <th>Porcentaje (%)</th>
+                        <th>Consumo Eléctrico</th>
+                        <th>Horas Sol</th>
+                        <th>Capacidad Instalada(kW)</th>
+                        <th>Cantidad Paneles</th>
                       </tr>
                     </thead>
-                    <tbody id="container">
+                    <tbody id="datosFilas">
                      
                       <!-- Las filas dinámicamente generadas -->
                     </tbody>
@@ -133,11 +149,31 @@
                 </div>
             
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-6">
                 <h4>Tendencia de Capacidad Instalada</h4>
                 <canvas id="lineChart"></canvas>
             </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h4>Implementación Energía Solar 1968-2022</h4>
+            <table id="tablaPaises" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>País</th>
+                  <th>Código</th>
+                  <th>Año</th>
+                  <th>% Equivalente</th>
+                </tr>
+              </thead>
+              <tbody id="datosPaises">
+               
+                <!-- Las filas dinámicamente generadas -->
+              </tbody>
+            </table>
+          </div>
+
         </div>
 
     </div>
@@ -178,5 +214,6 @@
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="index.js"></script>
+  <script type="module" src="./data/datos.js"></script>
 </body>
 </html>
