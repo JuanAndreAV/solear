@@ -5,7 +5,8 @@ fetch("./data/datos.json")
 .then((res)=> res.json())
 .then((data)=>{
     datosPaises = data;
-    cargarTabla(datosPaises.slice(0,50))
+    let colombia = datosPaises.filter((pais) => pais.Entity === "Colombia");
+    cargarTabla(colombia)//datosPaises.slice(0,50)
 })
 .catch((err)=>{
     console.log("Error al cargar los datos",err);

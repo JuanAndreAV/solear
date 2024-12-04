@@ -87,9 +87,7 @@ const barChartData = {
   };
   
   function capacidadSolar(consumoMensual, horasSol){
-    let capacidad =  consumoMensual / ( horasSol * 30 * 0.8);
-    //let cantidadPaneles = capacidad / 0.35
-
+    let capacidad =  consumoMensual / ( horasSol * 30 * 0.8);//80% de eficiencia factor (0.8)
     return capacidad
   };
 
@@ -103,7 +101,7 @@ const barChartData = {
     let horas = parseInt(document.getElementById("horas").value);
     console.log(horas)
     let capacidadInstalada = capacidadSolar(consumo, horas);
-    let cantidadPaneles = capacidadInstalada / 0.35;
+    let cantidadPaneles = capacidadInstalada / 0.35;//capacidadInstalada / potencia de un panel solar 350w(0.35kw) ej: 600 / 0.35
     
       tabla.innerHTML = `<td>${consumo} kmh</td><td>${horas} horas</td><td>${capacidadInstalada.toFixed(2)} kw</td><td>${cantidadPaneles.toFixed(0)} paneles</td>`
       
