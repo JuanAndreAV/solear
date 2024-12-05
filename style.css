@@ -44,19 +44,3 @@ h5{
   height: auto; /* Hace la imagen cuadrada */
   object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
 }
-#tablaPaises {
-  width: 100%; /* Asegura que la tabla ocupe todo el ancho */
-}
-
-#datosPaises {
-  display: block;
-  max-height: 300px; /* Ajusta la altura máxima */
-  overflow-y: auto; /* Agrega scroll vertical */
-  overflow-x: hidden; /* Evita el scroll horizontal */
-}
-
-#tablaPaises thead, #tablaPaises tbody tr {
-  display: table; /* Asegura que se mantenga el diseño de tabla */
-  width: 100%; /* El ancho coincide con el de la tabla */
-  table-layout: fixed; /* Distribuye las columnas uniformemente */
-}
