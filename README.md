@@ -22,5 +22,5 @@
 
 1. Clona el repositorio:
    ```bash
-   git clone 
+   git clone https://github.com/JuanAndreAV/solear.git
    cd repositorio
