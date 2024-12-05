@@ -1,58 +1,48 @@
 // Datos ficticios para los gráficos
 let datos = []
-const barChartData = {
-    labels: ['Eólica','Hidroeléctrica', 'Solar','Geotérmica'],
-    datasets: [{
-      label: 'Producción (GWh)',
-      data: [0,0,0,0],
-      backgroundColor: ['#4caf50', '#ffeb3b', '#2196f3', '#9c27b0'],
-    }]
-  };
+// const barChartData = {
+//     labels: ['Eólica','Hidroeléctrica', 'Solar','Geotérmica'],
+//     datasets: [{
+//       label: 'Producción (GWh)',
+//       data: [0,0,0,0],
+//       backgroundColor: ['#4caf50', '#ffeb3b', '#2196f3', '#9c27b0'],
+//     }]
+//   };
   
-  const pieChartData = {
-    labels: ['Eólica','Hidroeléctrica', 'Solar','Geotérmica'],
-    datasets: [{
-      data: datos,
-      backgroundColor: ['#9c27b0', '#2196f3', '#ffeb3b','#4caf50'],
-    }] 
-  };
+//   const pieChartData = {
+//     labels: ['Eólica','Hidroeléctrica', 'Solar','Geotérmica'],
+//     datasets: [{
+//       data: datos,
+//       backgroundColor: ['#9c27b0', '#2196f3', '#ffeb3b','#4caf50'],
+//     }] 
+//   };
   
 
   
   const lineChartData = {
-    labels: ['2018', '2019', '2020', '2021', '2022'],
-    datasets: [{
-      label: 'Capacidad Eólica',
-      data: [200, 250, 300, 350, 400],
-      borderColor: '#4caf50',
-      fill: false,
-    }, {
-      label: 'Capacidad Solar',
-      data: [100, 120, 150, 180, 210],
+    labels: ['1965', '2000', '2018', '2019', '2020','2022'],
+    datasets: [
+      {
+      label: 'Consumo Energía Solar en Colombia',
+      data: [0, 0.010000, 0.020000, 0.130000, 0.190000,0.320000],
       borderColor: '#ffeb3b',
-      fill: false,
-    }, {
-      label: 'Capacidad Hidroeléctrica',
-      data: [300, 310, 320, 330, 350],
-      borderColor: '#2196f3',
-    
       fill: false,
     }]
   };
   
   // Inicializar gráficos
   function renderCharts() {
-    const barras = document.getElementById('barChart').getContext('2d');
-    new Chart(barras, {
-      type: 'bar',
-      data: barChartData,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: true },
-        },
-      },
-    });
+    // const barras = document.getElementById('barChart').getContext('2d');
+    // new Chart(barras, {
+    //   type: 'bar',
+    //   data: barChartData,
+    //   options: {
+    //     responsive: true,
+    //     plugins: {
+    //       legend: { display: true },
+    //     },
+    //   },
+    // });}
     
     // const torta = document.getElementById('pieChart').getContext('2d');
     // new Chart(torta, {
@@ -79,19 +69,15 @@ const barChartData = {
  
   const boton = document.getElementById('btn-calcular');
   const tabla = document.getElementById('datosFilas');
-  const cantidadDias = {
-    '30 días': 30,
-    '15 días': 15,
-    '1 dia': 1,
-    
-  };
+  const mensaje = document.getElementById('validacion')
+ 
   
   function capacidadSolar(consumoMensual, horasSol){
     let capacidad =  consumoMensual / ( horasSol * 30 * 0.8);//80% de eficiencia factor (0.8)
     return capacidad
   };
 
-  console.log("resultado:",capacidadSolar(219,5))
+  //console.log("resultado:",capacidadSolar(219,5))
   
   let chartInstance;
 
@@ -103,9 +89,14 @@ const barChartData = {
     let capacidadInstalada = capacidadSolar(consumo, horas);
     let cantidadPaneles = capacidadInstalada / 0.35;//capacidadInstalada / potencia de un panel solar 350w(0.35kw) ej: 600 / 0.35
     
-      tabla.innerHTML = `<td>${consumo} kmh</td><td>${horas} horas</td><td>${capacidadInstalada.toFixed(2)} kw</td><td>${cantidadPaneles.toFixed(0)} paneles</td>`
       
-      
+      if (consumo > 0){
+        tabla.innerHTML = `<td>${consumo} kwh</td><td>${horas} horas</td><td>${capacidadInstalada.toFixed(2)} kw</td><td>${cantidadPaneles.toFixed(0)} paneles</td>`
+        mensaje.innerText = ""
+      }else{
+        mensaje.style.color = "red"
+        mensaje.innerText = "Consumo debe ser mayor a 0."
+      }
       // datos.forEach((item,index)=>{
       //   tabla.innerHTML += `
       // <td>${tipoRenovable[index]}</td>
@@ -115,19 +106,19 @@ const barChartData = {
       
     
     
-    if (chartInstance) {
-      chartInstance.data = pieChartData;
-      chartInstance.update(); // Actualizar el gráfico existente
-    } else {
-      const torta = document.getElementById('pieChart').getContext('2d');
-      chartInstance = new Chart(torta, {
-        type: 'pie',
-        data: pieChartData,
-        options: {
-          responsive: true,
-        },
-      });
-    }
+    // if (chartInstance) {
+    //   chartInstance.data = pieChartData;
+    //   chartInstance.update(); // Actualizar el gráfico existente
+    // } else {
+    //   const torta = document.getElementById('pieChart').getContext('2d');
+    //   chartInstance = new Chart(torta, {
+    //     type: 'pie',
+    //     data: pieChartData,
+    //     options: {
+    //       responsive: true,
+    //     },
+    //   });
+    // }
     datos.length = 0;
     tipoRenovable.length =0
     

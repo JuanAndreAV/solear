@@ -48,7 +48,7 @@
       </div>
       <div class="col-md-6">
          <h4 class="text-start">Interactúe con herramientas y recursos interactivos para todas las edades. Descubra cómo puede contribuir a un futuro sostenible</h4>
-         <button type="button" class="btn btn-secondary">Comenzemos</button>
+         <a href= "#calculadora" type="button" class="btn btn-secondary">Comenzemos</a>
       </div>
     </div>
   </div>
@@ -93,27 +93,14 @@
   </div>
   <!--Dashboard-->
   <div class="container mt-4">
-    <h1 class="text-center">Energías Renovables</h1>
-    <div class="container-fluid text-center">
         <div class="row justify-content-center">
-            <div class="col-md-4">
-                <h4>Porcentaje por Fuente</h4>
-                <canvas id="barChart"></canvas>
-                
-            </div>
-            
-            
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <h4>Porcentaje por Fuente</h4>
-                <canvas id="pieChart"></canvas>
-            </div>
-            <div class="col-md-4">
-                <h4>Capacidad instalada Energía solar</h4>
-                <form id="calculadora" class="form-floating ">
-                    <input type="number" class="form-control" id="consumoElectrico"  value="test@example.com">
-                    <label for="consumoElectrico">Consumo eléctrico total mes (kwh)</label>
+            <div class="col-md-6">
+                <h4 id="calculadora">Calculadora Energía solar</h4>
+                <p>Calcula cuántos paneles solares necesitas para tu hogar o comunidad</p>
+                <form  class="form-floating ">
+                    <input type="number" class="form-control" id="consumoElectrico">
+                    <label  for="consumoElectrico">Consumo eléctrico total mes (kwh)</label>
+                    <p id="validacion"></p>
                   <br>
                   <select id="horas" class="form-select" aria-label="Horas">
                       <option  value=1>Cantidad de horas de sol al día</option>
@@ -126,42 +113,44 @@
                       <option value=7>7</option>
                       <option value=8>8</option>
                       <option value=9>9</option>
-                      <option value="10">10</option>
+                      <option value=10>10</option>
                     </select>
                     <br>
-                    <button id="btn-calcular" type="button" class="btn btn-info">Calcular</button>
+                    <center><button id="btn-calcular" type="button" class="btn btn-info">Calcular</button></center>
                   </form>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <h4>Capacidad Instalada</h4>
                 <table class="table table-striped">
                     <thead>
                       <tr>
                         <th>Consumo Eléctrico</th>
-                        <th>Horas Sol</th>
+                        <th>Horas Sol (Día)</th>
                         <th>Capacidad Instalada(kW)</th>
-                        <th>Cantidad Paneles</th>
+                        <th>Cantidad Aprox. Paneles</th>
                       </tr>
                     </thead>
                     <tbody id="datosFilas">
-                     
                       <!-- Las filas dinámicamente generadas -->
                     </tbody>
                   </table>
-
                 </div>
-            
         </div>
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h4>Tendencia de Capacidad Instalada</h4>
+                <h4>Tendencia Consumo Energía Solar en Colombia</h4>
                 <canvas id="lineChart"></canvas>
             </div>
         </div>
         <div class="row justify-content-center mb-5">
           <div class="col-md-6">
-            <h4>Consumo Energía Solar 1965-2022</h4>
-            <button id="dataBtn" class="btn btn-success">ver datos</button>
+            <h4>Consumo Energía Solar en el mundo (1965-2022)</h4>
+            <center><button id="dataBtn" class="btn btn-success">Cargar información</button></center>
+            <div  class="d-flex justify-content-center my-3">
+              <div id="spinner"class="spinner-border text-success" role="status">
+                  <span class="visually-hidden">Cargando...</span>
+              </div>
+            </div>
             <table id="tablaPaises" class="table table-striped">
               <thead>
                 <tr>
@@ -177,33 +166,29 @@
               </tbody>
             </table>
           </div>
-
         </div>
-
     </div>
-    
   </div>
 </main>
 <section id="solear" class="amarillo mb-1 text-center">
   <img src="./assets/paneltarjeta2.jpg" class="rounded mx-auto d-block img-cuadro" alt="...">
   <h2>Únase a la revolución renovable</h2>
   <h6 class="text-center">Juntos podemos marcar la diferencia en nuestro futuro energético.</h6>
-  <button class="btn btn-success btn-lg">Únase</button>
+  <a href="https://www.instagram.com/solearcol/" target="_blank" class="btn btn-success btn-lg">Únase</a>
 </section>
 <footer id="contacto" class="text-center py-4">
   <div class="container">
       <ul class="list-inline">
+         
           <li class="list-inline-item">
-              <a href="#" class="text-decoration-none text-secondary">Sobre Nosotros</a>
+              <a href="https://www.instagram.com/solearcol/" target="_blank" class="text-decoration-none text-secondary">Nuestro Proyecto</a>
           </li>
           <li class="list-inline-item">
-              <a href="#" class="text-decoration-none text-secondary">Nuestro Proyecto</a>
+              <a href="https://www.instagram.com/solearcol/" target="_blank" class="text-decoration-none text-secondary">Instagram</a>
           </li>
           <li class="list-inline-item">
-              <a href="#" class="text-decoration-none text-secondary">Linkedin</a>
-          </li>
-          <li class="list-inline-item">
-              <a href="#" class="text-decoration-none text-secondary">Contáctanos</a>
+              <a href="mailto:solearcol@gmail.com?subject=Consulta sobre energía solar&body=Hola, quisiera más información sobre..." target="_blank" class="text-decoration-none text-secondary">solearcol@gmail.com</a>
+            </a>
           </li>
       </ul>
       <hr>

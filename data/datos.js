@@ -1,16 +1,19 @@
 let datosPaises = [];
 const tablaPaises = document.getElementById('datosPaises');
 const dataBtn = document.getElementById('dataBtn');
+const spinner = document.getElementById('spinner')
+spinner.style.display = 'none';
 
 dataBtn.addEventListener('click', cargarData);
 
 function cargarData(){
     fetch("./data/datos.json")
-.then((res)=> res.json())
+.then((res)=> res.json(),spinner.style.display="block")
 .then((data)=>{
     datosPaises = data;
-    //let colombia = datosPaises.filter((pais) => pais.Entity === "Colombia");
-    cargarTabla(datosPaises)//datosPaises.slice(0,50)
+    //let colombia = datosPaises.filter((pais) => pais.Entity === "Colombia")
+    cargarTabla(datosPaises);//datosPaises.slice(0,50)
+    spinner.style.display ='none';
     new DataTable('#tablaPaises');
 })
 .catch((err)=>{
