@@ -44,3 +44,11 @@ h5{
   height: auto; /* Hace la imagen cuadrada */
   object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
 }
+
+#btn-carousel-prev{
+  background-color: rgb(112, 111, 109);
+}
+#btn-carousel-next{
+  background-color: rgb(112, 111, 109);
+ 
+}

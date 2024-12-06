@@ -1,21 +1,21 @@
 // Datos ficticios para los gráficos
 let datos = []
-// const barChartData = {
-//     labels: ['Eólica','Hidroeléctrica', 'Solar','Geotérmica'],
-//     datasets: [{
-//       label: 'Producción (GWh)',
-//       data: [0,0,0,0],
-//       backgroundColor: ['#4caf50', '#ffeb3b', '#2196f3', '#9c27b0'],
-//     }]
-//   };
+const barChartData = {
+    labels: ['1965', '2000', '2018', '2019', '2020','2022'],
+    datasets: [{
+      label: 'Producción (GWh)',
+      data: [0, 0.010000, 0.020000, 0.130000, 0.190000,0.320000],
+      backgroundColor: ['#2196f3', '#ffeb3b','#228331' , '#9c27b0','#4caf50'],
+    }]
+  };
   
-//   const pieChartData = {
-//     labels: ['Eólica','Hidroeléctrica', 'Solar','Geotérmica'],
-//     datasets: [{
-//       data: datos,
-//       backgroundColor: ['#9c27b0', '#2196f3', '#ffeb3b','#4caf50'],
-//     }] 
-//   };
+  const pieChartData = {
+    labels: ['1965', '2000', '2018', '2019', '2020','2022'],
+    datasets: [{
+      data: [0, 0.010000, 0.020000, 0.130000, 0.190000,0.320000],
+      backgroundColor: ['#2196f3', '#ffeb3b','#228331' , '#9c27b0','#4caf50'],
+    }] 
+  };
   
 
   
@@ -32,26 +32,26 @@ let datos = []
   
   // Inicializar gráficos
   function renderCharts() {
-    // const barras = document.getElementById('barChart').getContext('2d');
-    // new Chart(barras, {
-    //   type: 'bar',
-    //   data: barChartData,
-    //   options: {
-    //     responsive: true,
-    //     plugins: {
-    //       legend: { display: true },
-    //     },
-    //   },
-    // });}
+    const barras = document.getElementById('barChart').getContext('2d');
+    new Chart(barras, {
+      type: 'bar',
+      data: barChartData,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true },
+        },
+      },
+    });
     
-    // const torta = document.getElementById('pieChart').getContext('2d');
-    // new Chart(torta, {
-    //   type: 'pie',
-    //   data: pieChartData,
-    //   options: {
-    //     responsive: true,
-    //   },
-    // });
+    const torta = document.getElementById('pieChart').getContext('2d');
+    new Chart(torta, {
+      type: 'pie',
+      data: pieChartData,
+      options: {
+        responsive: true,
+      },
+    });
   
     const lineCtx = document.getElementById('lineChart').getContext('2d');
     new Chart(lineCtx, {
@@ -64,7 +64,7 @@ let datos = []
         },
       },
     });
-  }
+  } 
 
  
   const boton = document.getElementById('btn-calcular');
