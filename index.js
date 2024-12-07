@@ -70,7 +70,7 @@ const barChartData = {
   const boton = document.getElementById('btn-calcular');
   const tabla = document.getElementById('datosFilas');
   const mensaje = document.getElementById('validacion')
- 
+ const interpretacion = document.getElementById('interpretacion')
   
   function capacidadSolar(consumoMensual, horasSol){
     let capacidad =  consumoMensual / ( horasSol * 30 * 0.8);//80% de eficiencia factor (0.8)
@@ -91,7 +91,8 @@ const barChartData = {
     
       
       if (consumo > 0){
-        tabla.innerHTML = `<td>${consumo} kwh</td><td>${horas} horas</td><td>${capacidadInstalada.toFixed(2)} kw</td><td>${cantidadPaneles.toFixed(0)} paneles</td><div class="card mt-4">
+        tabla.innerHTML = `<td>${consumo} kwh</td><td>${horas} horas</td><td>${capacidadInstalada.toFixed(2)} kw</td><td>${cantidadPaneles.toFixed(0)} paneles</td>` ;  
+        interpretacion.innerHTML = `<div class="card mt-4">
   <div class="card-header">
     <h5>¿Cómo interpretar los resultados?</h5>
   </div>
@@ -104,7 +105,7 @@ const barChartData = {
         <strong>Horas de Sol Pleno:</strong> Promedio de horas diarias en las que la radiación solar es máxima en tu ubicación. Depende de las condiciones climáticas y geográficas.
       </li>
       <li>
-        <strong>Capacidad Instalada (kWp):</strong> Potencia que debería tener tu sistema solar para cubrir tu consumo mensual bajo condiciones ideales de radiación solar.
+        <strong>Potencia Máxima Total o Capacidad Instalada (kWp):</strong> Potencia que debería tener tu sistema solar para cubrir tu consumo mensual bajo condiciones ideales de radiación solar.
       </li>
       <li>
         <strong>Cantidad de Paneles:</strong> Número estimado de paneles solares necesarios para generar la energía que consumes. Cada panel tiene una capacidad estándar de 350 Wp (0.35 kWp).
@@ -114,8 +115,7 @@ const barChartData = {
       <em>Ejemplo:</em> Si tu consumo mensual es de <strong>300 kWh</strong> y tienes un promedio de <strong>5 horas de sol pleno</strong> por día, necesitarías una capacidad instalada de <strong>2.5 kWp</strong>, lo que equivale a aproximadamente <strong>8 paneles solares</strong>.
     </p>
   </div>
-</div>
-`
+</div>`
         mensaje.innerText = ""
       }else{
         mensaje.style.color = "red"
