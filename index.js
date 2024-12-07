@@ -85,13 +85,37 @@ const barChartData = {
     tabla.innerText =""
     let consumo = parseFloat(document.getElementById('consumoElectrico').value);
     let horas = parseInt(document.getElementById("horas").value);
-    console.log(horas)
     let capacidadInstalada = capacidadSolar(consumo, horas);
-    let cantidadPaneles = capacidadInstalada / 0.35;//capacidadInstalada / potencia de un panel solar 350w(0.35kw) ej: 600 / 0.35
+    let capacidadPanel = 0.35;
+    let cantidadPaneles = Math.ceil(capacidadInstalada / capacidadPanel);//capacidadInstalada / potencia de un panel solar 350w(0.35kw) ej: 600 / 0.35
     
       
       if (consumo > 0){
-        tabla.innerHTML = `<td>${consumo} kwh</td><td>${horas} horas</td><td>${capacidadInstalada.toFixed(2)} kw</td><td>${cantidadPaneles.toFixed(0)} paneles</td>`
+        tabla.innerHTML = `<td>${consumo} kwh</td><td>${horas} horas</td><td>${capacidadInstalada.toFixed(2)} kw</td><td>${cantidadPaneles.toFixed(0)} paneles</td><div class="card mt-4">
+  <div class="card-header">
+    <h5>¿Cómo interpretar los resultados?</h5>
+  </div>
+  <div class="card-body">
+    <ul>
+      <li>
+        <strong>Consumo Mensual (kWh):</strong> Energía que consumes en promedio cada mes, medida en kilovatios-hora (kWh). Este dato lo puedes encontrar en tu factura eléctrica.
+      </li>
+      <li>
+        <strong>Horas de Sol Pleno:</strong> Promedio de horas diarias en las que la radiación solar es máxima en tu ubicación. Depende de las condiciones climáticas y geográficas.
+      </li>
+      <li>
+        <strong>Capacidad Instalada (kWp):</strong> Potencia que debería tener tu sistema solar para cubrir tu consumo mensual bajo condiciones ideales de radiación solar.
+      </li>
+      <li>
+        <strong>Cantidad de Paneles:</strong> Número estimado de paneles solares necesarios para generar la energía que consumes. Cada panel tiene una capacidad estándar de 350 Wp (0.35 kWp).
+      </li>
+    </ul>
+    <p class="mt-3">
+      <em>Ejemplo:</em> Si tu consumo mensual es de <strong>300 kWh</strong> y tienes un promedio de <strong>5 horas de sol pleno</strong> por día, necesitarías una capacidad instalada de <strong>2.5 kWp</strong>, lo que equivale a aproximadamente <strong>8 paneles solares</strong>.
+    </p>
+  </div>
+</div>
+`
         mensaje.innerText = ""
       }else{
         mensaje.style.color = "red"
