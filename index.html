@@ -116,11 +116,31 @@
                       <option value=10>10</option>
                     </select>
                     <br>
-                    <center><button id="btn-calcular" type="button" class="btn btn-info">Calcular</button></center>
+                    <center><button id="btn-calcular" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Calcular</button></center>
                   </form>
             </div>
+            <!--Modal-->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Calculadora</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Esta calculadora es una estimación cercana que puede darte una idea sobre la cantidad de paneles a instalar. Ten en cuenta que en Colombia las horas de sol promedio al día son 4 horas y que la cantidad de paneles también depende de otros factores ( eficiencia del panel, condiciones climáticas, área, inclinación de techo,…..)
+                    Es importante que consultes con un instalador profesional para obtener un cálculo más preciso y adaptado a tu situación particular.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--tabla calculadora-->
             <div class="col-md-6">
               <h4>Capacidad Instalada</h4>
+              
                 <table class="table table-striped">
                     <thead>
                       <tr>
