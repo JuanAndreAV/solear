@@ -2,12 +2,26 @@
 
 ## Descripción
 Solear es un proyecto desarrollado como trabajo final del Bootcamp Programador Nivel Básico de la Universidad de Antioquia. Este dashboard interactivo se enfoca en la energía fotovoltaica, una fuente de energía limpia y económica en Colombia. Su objetivo principal es brindar información clara y concisa sobre el potencial de la energía solar en el país, permitiendo a los usuarios tomar decisiones informadas sobre la adopción de esta tecnología.
+![IMG-20241205-WA0074](https://github.com/user-attachments/assets/59c533ec-33dd-4788-a6ec-2b354cdc0f22)
+
 
 ## Características
 * **Dashboard intuitivo:** Presenta datos de manera visual y fácil de entender.
+![Screenshot_20241209-183108-768](https://github.com/user-attachments/assets/a234a4cf-6010-4bdf-95d0-6a8693147b4b)
+
+  
 * **Calculadora de ahorro:** Permite estimar el ahorro económico y energético al instalar paneles solares.
+![Screenshot_20241209-183139-482](https://github.com/user-attachments/assets/742e0280-171b-4b26-a5d6-a6548c964766)
+
+  
 * **Información detallada:** Ofrece datos sobre la radiación solar en diferentes regiones de Colombia.
+![Screenshot_20241209-183151-308](https://github.com/user-attachments/assets/708fd2fe-8c54-4b2a-a274-003923bf243e)
+
+  
 * **Tecnología fotovoltaica:** Explica los conceptos básicos de la energía solar y sus aplicaciones.
+![Screenshot_20241209-183124-688](https://github.com/user-attachments/assets/83813381-7aff-422b-9777-b2297d4d75b3)
+
+ 
 
 ## Equipo
 * **Desarrolladores:**
