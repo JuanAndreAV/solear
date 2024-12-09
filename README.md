@@ -45,9 +45,6 @@ Para acceder al dashboard, visita: https://juanandreav.github.io/solear/
 3. **Realiza tus cambios.**
 4. **Envía un pull request.**
 
-## Licencia
-Este proyecto está bajo la licencia [Especificar la licencia, e.g., MIT].
-
 ## Seguridad
 La información manejada en este proyecto es de carácter público y no se requiere encriptación. Para consultas o comentarios, puedes contactarnos a través de nuestro perfil de Instagram: @solearcol.
 
@@ -63,5 +60,8 @@ Agradecemos a la Universidad de Antioquia y a nuestros mentores técnicos por el
 * **Seguridad:** Se ha añadido una sección de seguridad para aclarar que no se utiliza encriptación
 * **Enfoque en el usuario:** Se ha enfatizado en la facilidad de uso del dashboard y en la información proporcionada y resaltando lo responsivo del sitio para uso en todo tipo de dispositivos.
 * **Claridad:** Se ha utilizado un lenguaje claro y conciso para facilitar la comprensión.
+* **Cambios Efectuados:** Se añade Modal con Leyenda. Este modal aparece al momento de calcular la capacidad instalada de energía solar![IMG-20241207-WA0003](https://github.com/user-attachments/assets/dce6d8fc-74f2-4aea-a0ad-58cb904d59e7)
+![IMG-20241207-WA0031](https://github.com/user-attachments/assets/78d31f59-2e8c-4eca-b8e3-de1e19909b70)
+
 
 **Este README actualizado proporciona una descripción concisa y precisa del proyecto Solear, enfocándose en los aspectos más relevantes para el usuario y los colaboradores.**
